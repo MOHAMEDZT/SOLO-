@@ -15,10 +15,10 @@
         }
 
         body {
-            background: black;
+            background: #000000;
             color: #333;
-            min-height: 100vh;
-            max-width: 500px;
+            min-height: 100%;
+            max-width: 100%;
             margin: 0 auto;
         }
 
@@ -40,8 +40,8 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            height: fit-content;
-            width: fit-content;
+            height: 100%;
+            width:100%;
             margin-bottom: 80px;
         }
 
@@ -56,8 +56,9 @@
         }
 
         .menu-item img {
-
-            object-fit:contain;
+            height: 100%;
+            width: 100%;
+            object-fit:fill;
             display: block;
             
         }
@@ -132,10 +133,10 @@
 
     <div class="menu-container">
         <div class="menu-item">
-            <img src="IMAGES/PIZZA02.jpg" alt="Pizza">
+            <img src="IMAGES/PIZZA01.jpg" alt="Pizza">
         </div>
         <div class="menu-item">
-            <img src="IMAGES/PIZZA01.jpg" alt="Tacos">
+            <img src="IMAGES/PIZZA02.jpg" alt="Tacos">
         </div>
         <div class="menu-item">
             <img src="IMAGES/SOUFFLE.jpg" alt="Soufflé">
