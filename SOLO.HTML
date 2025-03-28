@@ -84,30 +84,27 @@
         }
 
         /* Main Content */
-        .main-content {
-            margin-top: 70px;
-            padding: 1rem;
-            padding-bottom: 80px;
-        }
+        .menu-container {
+            display: flex;
+            flex-direction: column;
 
-        .menu-grid {
-            display: grid;
-            gap: 1.5rem;
+            width:100%;
+            height:100%;
+            margin-bottom: 80px;
         }
 
         .menu-item {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            height: 100%;
+            
         }
-
         .menu-item img {
             width: 100%;
-            height: 250px;
-            object-fit: cover;
+            zoom: 50;
+            object-fit:scale-down;
             display: block;
+            
         }
-
         /* Bottom Navigation */
         .bottom-nav {
             position: fixed;
