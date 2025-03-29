@@ -15,61 +15,115 @@
         }
 
         body {
-            background: #000000;
-            color: #333;
-            min-height: 100%;
-            max-width: 100%;
-            margin: 0 auto;
-        }
-
-        .header {
-            padding: 10px 5px;
             background: #ffffff;
-            text-align: center;
-            color: rgb(0, 0, 0);
-            margin-bottom: 15px;
-            border-radius: 0 0 15px 15px;
+            color: #333333;
+            min-height: 100vh;
         }
 
-        .header h1 {
-            font-size: 1.6em;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .menu-container {
+        /* Top Navigation */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.97);
+            padding: 1rem;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #eeeeee;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
 
-            width:100%;
-            height:100%;
-            margin-bottom: 80px;
+        .menu-toggle {
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .logo {
+            height: 35px;
+            width: auto;
+        }
+
+        /* Navigation Drawer */
+        .nav-drawer {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100%;
+            background: #ffffff;
+            padding: 2rem 1.5rem;
+            transition: 0.3s ease;
+            z-index: 1001;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-drawer.active {
+            left: 0;
+        }
+
+        .nav-drawer ul {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .nav-drawer li {
+            margin: 1.2rem 0;
+        }
+
+        .nav-drawer a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 70px;
+            padding: 1rem;
+            padding-bottom: 80px;
+        }
+
+        .menu-grid {
+            display: grid;
+            gap: 1.5rem;
         }
 
         .menu-item {
-            width: 100%;
-            height: 100%;
-            
-        }
-        .menu-item img {
-            width: 100%;
-            zoom: 50;
-            object-fit:scale-down;
-            display: block;
-            
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
         }
 
+        .menu-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Bottom Navigation */
         .bottom-nav {
             position: fixed;
             bottom: 0;
             width: 100%;
-            background: white;
+            background: #ffffff;
+            padding: 0.8rem 0;
+            border-top: 1px solid #eeeeee;
+            z-index: 1000;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-items {
             display: flex;
             justify-content: space-around;
-            padding: 15px 0;
-            border-top: 1px solid #ddd;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
-            border-radius: 15px 15px 0 0;
+            align-items: center;
         }
 
         .nav-item {
@@ -78,150 +132,142 @@
             align-items: center;
             color: #666;
             text-decoration: none;
-            font-size: 0.8em;
-            transition: color 0.2s;
+            font-size: 0.75rem;
+            transition: 0.2s ease;
+        }
+
+        .nav-item i {
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
         }
 
         .nav-item.active {
             color: #2D3047;
         }
 
-        .nav-item i {
-            font-size: 1.6em;
-            margin-bottom: 5px;
-        }
-
+        /* Modal Styles */
         .modal {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0, 0, 0, 0.5);
             display: none;
             align-items: center;
             justify-content: center;
-            z-index: 1000;
+            z-index: 1002;
         }
 
         .modal-content {
             background: white;
-            padding: 25px;
-            border-radius: 15px;
-            width: 85%;
-            max-width: 300px;
+            padding: 2rem;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 400px;
         }
 
         @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.4em;
-            }
-            
             .menu-item img {
-                max-height: 250px;
+                height: 200px;
             }
         }
-
-        
-
-
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>SOLO</h1>
-    </div>
-
-    <div class="menu-container">
-        <div class="menu-item">
-            <img src="IMAGES\PIZZA01.jpg" alt="Pizza">
-        </div>
-        <div class="menu-item">
-            <img src="IMAGES\PIZZA02.jpg" alt="Tacos">
-        </div>
-        <div class="menu-item">
-            <img src="IMAGES\SOUFFLE.jpg" alt="Soufflé">
-        </div>
-        <div class="menu-item">
-            <img src="IMAGES\TACOS02.jpg" alt="Special">
-        </div>
-    </div>
-
-
-
-
-
-
-
-    <nav class="bottom-nav">
-        
-        <a href="https://www.instagram.com/solopizza.oran" target="_blank" class="nav-item">
-            <i class="fab fa-instagram"></i>
-            Instagram
-        </a>
-
-
-        <a href="https://www.tiktok.com/@solopizza.oran" target="_blank" class="nav-item">
-            <i class="fab fa-tiktok"></i>
-            TikTok
-        </a>
-
-        <a href="#" class="nav-item active">
-            <i class="fas fa-home"></i>
-            Menu
-        </a>
-
-
-        <a href="#" class="nav-item" onclick="showContact()">
-            <i class="fas fa-phone"></i>
-            Phone
-        </a>
-
-        <a href="https://maps.app.goo.gl/J3AGvCFidhfbvkmN8" target="_blank" class="nav-item">
-            <i class="fas fa-map-marker-alt"></i>
-            Location
-        </a>
-
-
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <i class="fas fa-bars menu-toggle"></i>
+        <img src="IMAGES/logo.png" alt="Solo Logo" class="logo">
     </nav>
 
+    <!-- Navigation Drawer -->
+    <div class="nav-drawer">
+        <h2 style="color: #333; margin-bottom: 1.5rem;">SOLO MENU</h2>
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="https://www.instagram.com/solopizza.oran" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@solopizza.oran" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="#" onclick="showContact()"><i class="fas fa-phone"></i> Phone</a></li>
+            <li><a href="https://maps.app.goo.gl/J3AGvCFidhfbvkmN8" target="_blank"><i class="fas fa-map-marker-alt"></i> Location</a></li>
+        </ul>
+    </div>
 
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="IMAGES/PIZZA01.jpg" alt="Pizza">
+            </div>
+            <div class="menu-item">
+                <img src="IMAGES/PIZZA02.jpg" alt="Tacos">
+            </div>
+            <div class="menu-item">
+                <img src="IMAGES/SOUFFLE.jpg" alt="Soufflé">
+            </div>
+            <div class="menu-item">
+                <img src="IMAGES/TACOS02.jpg" alt="Special">
+            </div>
+        </div>
+    </div>
 
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="nav-items">
+            
+            <a href="https://www.instagram.com/solopizza.oran" target="_blank" class="nav-item">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+            <a href="https://www.tiktok.com/@solopizza.oran" target="_blank" class="nav-item">
+                <i class="fab fa-tiktok"></i>
+                <span>TikTok</span>
+            </a>
+            <a href="#" class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item" onclick="showContact()">
+                <i class="fas fa-phone"></i>
+                <span>Phone</span>
+            </a>
+            <a href="https://maps.app.goo.gl/J3AGvCFidhfbvkmN8" target="_blank" class="nav-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Location</span>
+            </a>
+        </div>
+    </nav>
 
-
-
-
-
+    <!-- Contact Modal -->
     <div class="modal" id="contactModal">
         <div class="modal-content">
-            <h3 style="margin-bottom: 20px; color: #2D3047;">Contact Us</h3>
-            <div style="margin-bottom: 25px;">
-                <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                    <i class="fas fa-phone" style="margin-right: 10px; color: #2D3047;"></i>
+            <h3 style="margin-bottom: 1.5rem;">Contact Information</h3>
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <i class="fas fa-phone"></i>
                     <span>+213 559 260 522</span>
                 </div>
                 
             </div>
             <button onclick="copyPhone()" style="
                 background: #2D3047;
-                border: none;
-                padding: 12px;
-                border-radius: 8px;
                 color: white;
+                border: none;
+                padding: 1rem;
                 width: 100%;
-                margin-bottom: 10px;
-                font-weight: 500;
+                border-radius: 8px;
+                cursor: pointer;
+                margin-bottom: 1rem;
             ">
                 Copy Number
             </button>
             <button onclick="closeModal()" style="
                 background: none;
                 border: 1px solid #ddd;
-                color: #666;
-                padding: 12px;
-                border-radius: 8px;
+                padding: 1rem;
                 width: 100%;
-                font-weight: 500;
+                border-radius: 8px;
+                cursor: pointer;
             ">
                 Close
             </button>
@@ -229,6 +275,19 @@
     </div>
 
     <script>
+        // Navigation Drawer Toggle
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-drawer').classList.add('active');
+        });
+
+        // Close Drawer
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.nav-drawer') && !e.target.closest('.menu-toggle')) {
+                document.querySelector('.nav-drawer').classList.remove('active');
+            }
+        });
+
+        // Modal Functions
         function showContact() {
             document.getElementById('contactModal').style.display = 'flex';
         }
@@ -242,21 +301,15 @@
             alert('Phone number copied!');
         }
 
-        // Navigation active state
+        // Navigation Active State
         document.querySelectorAll('.nav-item').forEach(item => {
-            item.addEventListener('click', function() {
-                document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
-                this.classList.add('active');
+            item.addEventListener('click', function(e) {
+                if(!this.classList.contains('active')) {
+                    document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+                    this.classList.add('active');
+                }
             });
         });
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('contactModal');
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
     </script>
 </body>
 </html>
