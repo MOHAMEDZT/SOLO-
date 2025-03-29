@@ -15,7 +15,7 @@
         }
 
         body {
-            background: #ffffff;
+            background: black;
             color: #333333;
             min-height: 100vh;
         }
@@ -34,6 +34,27 @@
             border-bottom: 1px solid #eeeeee;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
+
+/*-------------------------------------------------*/
+
+        .header {
+            padding: 10px 5px;
+            background: #ffffff;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            margin-bottom: 15px;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .header h1 {
+            font-size: 1.6em;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+/*-------------------------------------------------*/
+
+
 
         .menu-toggle {
             font-size: 1.5rem;
@@ -177,8 +198,12 @@
 <body>
     <!-- Top Navigation -->
     <nav class="top-nav">
+        
         <i class="fas fa-bars menu-toggle"></i>
-        <img src="IMAGES/logo.png" alt="Solo Logo" class="logo">
+        <div class="header">
+            <h1>SOLO</h1>
+        </div>
+        <img src="IMAGES/photo_2025-03-23_12-22-10-removebg-preview.png" alt="Solo Logo" class="logo">
     </nav>
 
     <!-- Navigation Drawer -->
